@@ -6,7 +6,7 @@
 name: Eric Miguel
 
 # Short bio or description (displayed in the header)
-description: Developer and Climate Researcher from Brazil
+description: Developer and climate researcher
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://raw.githubusercontent.com/ericmiguel/ericmiguel.github.io/master/images/blog-logo.png
@@ -17,19 +17,13 @@ avatar: https://raw.githubusercontent.com/ericmiguel/ericmiguel.github.io/master
 
 # Includes an icon in the footer for each username you enter
 footer-links:
-  dribbble:
-  email: ericmiguel@id.uff.br
-  facebook:
-  flickr:
   github: ericmiguel
   instagram:
   linkedin:
   pinterest:
-  rss: # just type anything here for a working RSS icon
   twitter: 
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   youtube: # channel/<your_long_string> or user/<user-name>
-  googleplus: # anything in your profile username that comes after plus.google.com/
 
 
 # Enter your Disqus shortname (not your username) to enable commenting on posts

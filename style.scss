@@ -13,14 +13,22 @@
 /* BASE RULES */
 /**************/
 
+html, body {
+  /* IE 10-11 didn't like using min-height */
+  height: 100%;
+}
+
 html {
   font-size: 100%;
+  height: 100%;
 }
 
 body {
 	background: $white;
   font: 18px/1.4 $helvetica;
   color: $darkGray;
+  display: flex !important;
+  flex-direction: column;
 }
 
 .container {
@@ -28,11 +36,12 @@ body {
   max-width: 740px;
   padding: 0 10px;
   width: 100%;
+  flex: 1 0 auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $helveticaNeue;
-  color: $darkerGray;
+  color: $black;
   font-weight: bold;
 
   line-height: 1.7;
@@ -158,6 +167,14 @@ img {
   padding: 20px 0;
   border-bottom: 1px solid $lightGray;
 
+  height: 80px;
+	color: #ffffff;
+	box-sizing: border-box;
+	top:-100px;
+
+	-webkit-transition:top 0.3s;
+	transition:top 0.3s;
+
   @include mobile {
     text-align: center;
   }
@@ -275,12 +292,13 @@ nav {
   margin-top: 50px;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  background-color: $lightGray;
+  background-color: $white;
 }
 
 footer {
   padding: 20px 0;
-  text-align: center;
+  text-align: left;
+  flex-shrink: 0;
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS

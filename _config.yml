@@ -16,7 +16,8 @@ avatar: https://raw.githubusercontent.com/ericmiguel/ericmiguel.github.io/master
 #
 
 # Includes an icon in the footer for each username you enter
-footer-links:
+social-links:
+  mail: ericmiguel@id.uff.br
   github: ericmiguel
   instagram:
   linkedin:
@@ -25,6 +26,8 @@ footer-links:
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   youtube: # channel/<your_long_string> or user/<user-name>
 
+
+excerpt_separator: <!--more-->
 
 # Enter your Disqus shortname (not your username) to enable commenting on posts
 # You can find your shortname on the Settings page of your Disqus account

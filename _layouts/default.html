@@ -1,39 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
 
-    {% include meta.html %}
+<head>
+  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
 
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+  {% include meta.html %}
 
-  </head>
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/flexboxgrid.css" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}"
+    href="{{ site.baseurl }}/feed.xml" />
 
-  <body>
-    <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
+</head>
 
-          <div class="site-info">
+<body>
+
+  <header class="container header">
+    <div class="row middle-xs">
+
+      <div class="col-xs-12 col-md-8">
+
+        <div class="row center-xs center-sm">
+
+          <div class="col-xs-12 col-md-2">
+            <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
+          </div>
+
+          <div class="col-xs-12 col-md-10">
             <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
             <p class="site-description">{{ site.description }}</p>
           </div>
 
-          <nav>
+        </div>
+
+      </div>
+
+      <div class="col-xs-12 col-md-4">
+
+        <div class="row center-xs center-sm end-md bottom-md">
+
+          <nav class="col-xs-12">
             <a href="{{ site.baseurl }}/">Blog</a>
             <a href="{{ site.baseurl }}/about">About</a>
           </nav>
-        </header>
+
+        </div>
+
       </div>
     </div>
 
-    <div id="main" role="main">
-      {{ content }}
-    </div>
+
+  </header>
 
 
-    {% include analytics.html %}
-  </body>
+  <div id="main" role="main">
+    {{ content }}
+  </div>
+
+
+  {% include analytics.html %}
+</body>
+
 </html>

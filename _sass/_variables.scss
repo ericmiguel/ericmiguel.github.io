@@ -19,8 +19,21 @@ $helveticaNeue: 'Oswald', sans-serif;
 $georgia: Georgia, serif;
 
 // Mobile breakpoints
-@mixin mobile {
-  @media screen and (max-width: 640px) {
+
+@mixin sm-screen {
+  @media only screen and (min-width: 48em) {
+    @content;
+  }
+}
+
+@mixin md-screen {
+  @media only screen and (min-width: 64em) {
+    @content;
+  }
+}
+
+@mixin lg-screen {
+  @media only screen and (min-width: 75em) {
     @content;
   }
 }

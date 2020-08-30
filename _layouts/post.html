@@ -1,31 +1,14 @@
 ---
 layout: default
-featured-image: my-awesome-photo.jpg
 ---
 
 <!-- featured post image -->
 {% if page.featured-image %}
-{% include post-featured-image.html image=page.featured-image alt=page.featured-image-alt %}
+{% include post-header.html image=page.featured-image alt=page.featured-image-alt %}
 {% endif %}
 
 <div class="container">
   <article class="post">
-
-    <!-- post header -->
-    <h1>{{ page.title }}</h1>
-
-    <div class="date">
-      Written on {{ page.date | date: "%B %e, %Y" }}
-    </div>
-
-    {% if page.tags %}
-    <span>[
-      {% for tag in page.tags %}
-      {% capture tag_name %}{{ tag }}{% endcapture %}
-      <a href="/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
-      {% endfor %}
-      ]</span>
-    {% endif %}
 
     <!-- post content -->
     <div class="entry">

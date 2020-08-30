@@ -2,7 +2,7 @@
 layout: post
 title: You're up and running!
 tags: jekyll blog github-page
-featured-image: lucas-ludwig-e0WoI8MicCU-unsplash.jpg
+featured-image: ascii_tree.png
 ---
 
 Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).

@@ -9,6 +9,7 @@
 @import "variables";
 // Syntax highlighting @import is at the bottom of this file
 
+
 /**************/
 /* BASE RULES */
 /**************/
@@ -23,16 +24,64 @@ html {
 }
 
 body {
-	background: $white;
   font: 18px/1.4 $helvetica;
   color: $darkGray;
+}
 
+.post-header {
+  padding: 2rem;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(9,13,14,0.9206057422969187) 0%, rgba(255,255,255,0) 100%);
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h1, p {
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  div:first-child {
+    border-left: 3px solid #fff;
+    padding-left: 1.3em;
+  }
+
+  a {
+    background-color: #fff;
+    border-radius: 5px;
+    color: black;
+    padding: 5px;
+  }
+
+}
+
+.Aligner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Aligner-item {
+  flex: 1;
+}
+
+.Aligner-item--center {
+  align-self: center;
+}
+
+.Aligner-item--top {
+  align-self: flex-start;
+}
+
+.Aligner-item--bottom {
+  align-self: flex-end;
 }
 
 .parallax {
 
   /* Full height */
-  height: 300px;
+  height: 40vh;
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -46,7 +95,6 @@ body {
   max-width: 740px;
   padding: 0 10px;
   width: 100%;
-  flex: 1 0 auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -175,7 +223,7 @@ featured-image-wrapper img{
 //
 
 .wrapper-masthead {
-  margin-bottom: 50px;
+  margin-bottom: 3vh;
 }
 
 .masthead {
@@ -270,7 +318,13 @@ nav {
   border-bottom: 1px solid $lightGray;
 }
 
-.posts > .post:last-child {
+.post:first-child{
+  margin-top: 5vh;
+}
+
+
+.post:last-child {
+  margin-bottom: 15vh;
   padding-bottom: 1em;
   border-bottom: none;
 }
@@ -308,9 +362,14 @@ footer {
   flex-shrink: 0;
 }
 
-d-inline {
+.d-inline {
   display: inline !important;
 }
+
+.text-right{
+  text-align: right !important;
+}
+
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start

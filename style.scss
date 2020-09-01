@@ -13,7 +13,8 @@
 /* BASE RULES */
 /**************/
 
-html, body {
+html,
+body {
   /* IE 10-11 didn't like using min-height */
   height: 100%;
 }
@@ -56,6 +57,88 @@ body {
     border-radius: 5px;
     color: black;
     padding: 5px;
+  }
+}
+
+.main-nav {
+  .button {
+    display: inline-block;
+    text-decoration: none;
+    position: relative;
+  }
+
+
+  .button .border-wrapper {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0.5em 1em;
+    border: 2px solid #000000;
+  }
+
+
+  .button .border-wrapper .label {
+    font-weight: 600;
+    color: #000;
+
+    line-height: 110%;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-transition: all 0.15s ease-out;
+    -moz-transition: all 0.15s ease-out;
+    -o-transition: all 0.15s ease-out;
+    transition: all 0.15s ease-out;
+  }
+
+
+  .button-border {
+    position: absolute;
+    background-color: #bcbcbc;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+  }
+
+  .button:hover .border-wrapper .button-border-left,
+  .button:hover .border-wrapper .button-border-right {
+    height: calc(100% + 2px);
+  }
+
+  .button:hover .border-wrapper .button-border-top,
+  .button:hover .border-wrapper .button-border-bottom {
+    width: calc(100% + 2px);
+  }
+
+  .button-border-left {
+    left: -2px;
+    bottom: -2px;
+    width: 2px;
+    height: 0;
+  }
+
+  .button-border-top {
+    left: -2px;
+    top: -2px;
+    width: 0;
+    height: 2px;
+  }
+
+  .button-border-right {
+    right: -2px;
+    top: -2px;
+    width: 2px;
+    height: 0;
+  }
+
+  .button-border-bottom {
+    right: -2px;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
   }
 }
 
@@ -241,26 +324,24 @@ featured-image-wrapper img {
   @include md-screen {
     margin: 4em 0 6em 0;
   }
-
 }
 
 .site-avatar img {
   width: 70px;
 
-  @include md-screen{
+  @include md-screen {
     width: 100%;
   }
-
 }
 
-.site-name, .site-description {
+.site-name,
+.site-description {
   margin: 0;
 
-  @include md-screen{
+  @include md-screen {
     text-align: left;
   }
 }
-
 
 //
 // .main
@@ -308,13 +389,11 @@ featured-image-wrapper img {
   @include md-screen {
     text-align: justify;
   }
-
 }
 
 .page {
   text-align: justify;
 }
-
 
 .d-inline {
   display: inline !important;

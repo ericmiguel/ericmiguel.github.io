@@ -60,7 +60,14 @@ body {
   }
 }
 
-.main-nav {
+nav {
+
+  margin-top: 1em;
+
+  @include lg-screen {
+    margin-top: 0;
+  }
+
   .button {
     display: inline-block;
     text-decoration: none;

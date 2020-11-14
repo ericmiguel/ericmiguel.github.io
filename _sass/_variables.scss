@@ -1,4 +1,3 @@
-
 //
 // VARIABLES
 //
@@ -7,33 +6,16 @@
 $blue: #4183C4;
 
 // Grays
-$black: #000;
-$darkGray: #333;
-$gray: #666;
+$black    : #000;
+$darkGray : #333;
+$gray     : #666;
 $lightGray: #eee;
-$white: #fff;
+$white    : #fff;
 
 // Font stacks
-$helvetica: 'Inconsolata', monospace;
-$helveticaNeue: 'Oswald', sans-serif;
-$georgia: Georgia, serif;
-
-// Mobile breakpoints
-
-@mixin sm-screen {
-  @media only screen and (min-width: 48em) {
-    @content;
-  }
-}
-
-@mixin md-screen {
-  @media only screen and (min-width: 64em) {
-    @content;
-  }
-}
-
-@mixin lg-screen {
-  @media only screen and (min-width: 75em) {
-    @content;
-  }
-}
+$helvetica: 'Inconsolata',
+monospace;
+$helveticaNeue: 'Oswald',
+sans-serif;
+$georgia: Georgia,
+serif;

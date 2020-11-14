@@ -2,25 +2,29 @@
 layout: default
 ---
 
-<div class="posts container">
+<div class="slanted-div">
+<div class="container">
 
-  <div class="row center-xs center-sm end-md end-lg">
+  <div>
 
-    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-      <h3 class="m-0">Hope anything here helps you out.</h3>
+    <div>
+      <h3>Hope anything here helps you out.</h3>
       <i>- Eric</i>
     </div>
 
-    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+    <div>
       <div class="the-reader"></div>
     </div>
 
   </div>
+</div>
+</div>
 
+<div class="container">
   {% for post in site.posts %}
 
-  <div class="row center-xs center-sm start-md start-lg">
-    <article class="post excerpt col-xs-12">
+  <div>
+    <article class="post excerpt">
 
       <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
       <p>{{ post.date | date: "%B %e, %Y" }}</p>

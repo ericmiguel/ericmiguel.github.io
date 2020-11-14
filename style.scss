@@ -1,174 +1,34 @@
+--- 
 ---
----
-
 //
 // IMPORTS
 //
 
-@import "reset";
 @import "variables";
+@import "bulma";
 // Syntax highlighting @import is at the bottom of this file
 
-/**************/
-/* BASE RULES */
-/**************/
 
-html,
-body {
-  /* IE 10-11 didn't like using min-height */
-  height: 100%;
+.the-reader {
+  background-image   : url(/images/SitReadingDoodle.svg);
+  max-width          : 100%;
+  height             : 30vh;
+  background-repeat  : no-repeat;
+  background-position: center;
+  margin-top         : 20px;
+
+
+  @include until($tablet) {
+    height             : 40vh;
+    background-position: right;
+    margin-top         : 0;
+  }
+
+
 }
 
-html {
-  font-size: 100%;
-}
-
-body {
-  font: 18px/1.4 $helvetica;
-  color: $darkGray;
-}
-
-.post-header {
-  padding: 2rem;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    rgba(9, 13, 14, 0.9206057422969187) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h1,
-  p {
-    color: #fff;
-    margin-bottom: 10px;
-  }
-
-  div:first-child {
-    border-left: 3px solid #fff;
-    padding-left: 1.3em;
-  }
-
-  a {
-    background-color: #fff;
-    border-radius: 5px;
-    color: black;
-    padding: 5px;
-  }
-}
-
-nav {
-
-  margin-top: 1em;
-
-  @include lg-screen {
-    margin-top: 0;
-  }
-
-  .button {
-    display: inline-block;
-    text-decoration: none;
-    position: relative;
-  }
-
-
-  .button .border-wrapper {
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    padding: 0.5em 1em;
-    border: 2px solid #000000;
-  }
-
-
-  .button .border-wrapper .label {
-    font-weight: 600;
-    color: #000;
-
-    line-height: 110%;
-    letter-spacing: 2px;
-    text-align: center;
-    text-transform: uppercase;
-    -webkit-transition: all 0.15s ease-out;
-    -moz-transition: all 0.15s ease-out;
-    -o-transition: all 0.15s ease-out;
-    transition: all 0.15s ease-out;
-  }
-
-
-  .button-border {
-    position: absolute;
-    background-color: #bcbcbc;
-    -webkit-transition: all 0.25s ease-out;
-    -moz-transition: all 0.25s ease-out;
-    -o-transition: all 0.25s ease-out;
-    transition: all 0.25s ease-out;
-  }
-
-  .button:hover .border-wrapper .button-border-left,
-  .button:hover .border-wrapper .button-border-right {
-    height: calc(100% + 2px);
-  }
-
-  .button:hover .border-wrapper .button-border-top,
-  .button:hover .border-wrapper .button-border-bottom {
-    width: calc(100% + 2px);
-  }
-
-  .button-border-left {
-    left: -2px;
-    bottom: -2px;
-    width: 2px;
-    height: 0;
-  }
-
-  .button-border-top {
-    left: -2px;
-    top: -2px;
-    width: 0;
-    height: 2px;
-  }
-
-  .button-border-right {
-    right: -2px;
-    top: -2px;
-    width: 2px;
-    height: 0;
-  }
-
-  .button-border-bottom {
-    right: -2px;
-    bottom: -2px;
-    width: 0;
-    height: 2px;
-  }
-}
-
-.Aligner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.Aligner-item {
-  flex: 1;
-}
-
-.Aligner-item--center {
-  align-self: center;
-}
-
-.Aligner-item--top {
-  align-self: flex-start;
-}
-
-.Aligner-item--bottom {
-  align-self: flex-end;
+.header-wrapper {
+  background: #128c7e;
 }
 
 .parallax {
@@ -177,186 +37,14 @@ nav {
 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-position  : center;
+  background-repeat    : no-repeat;
+  background-size      : cover;
 }
 
-.container {
-  margin: 0 auto;
-  max-width: 740px;
-  padding: 0 10px;
-  width: 100%;
-
-  @include sm-screen {
-    padding: 0 20px;
-  }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: $helveticaNeue;
-  color: $black;
-  font-weight: bold;
-
-  line-height: 1.7;
-  margin: 1em 0 15px;
-  padding: 0;
-
-  @include sm-screen {
-    line-height: 1.4;
-  }
-}
-
-h1 {
-  font-size: 30px;
-  a {
-    color: inherit;
-  }
-}
-
-h2 {
-  font-size: 24px;
-}
-
-h3 {
-  font-size: 20px;
-}
-
-h4 {
-  font-size: 18px;
-  color: $gray;
-}
-
-p {
-  margin: 15px 0;
-}
-
-a {
-  color: $blue;
-  text-decoration: none;
-  cursor: pointer;
-  &:hover,
-  &:active {
-    color: $blue;
-  }
-}
-
-ul,
-ol {
-  margin: 15px 0;
-  padding-left: 30px;
-}
-
-ul {
-  list-style-type: disc;
-}
-
-ol {
-  list-style-type: decimal;
-}
-
-ol ul,
-ul ol,
-ul ul,
-ol ol {
-  margin: 0;
-}
-
-ul ul,
-ol ul {
-  list-style-type: circle;
-}
-
-em,
-i {
-  font-style: italic;
-}
-
-strong,
-b {
-  font-weight: bold;
-}
-
-img {
-  max-width: 100%;
-}
-
-featured-image-wrapper img {
-  height: 200px !important; /*or 70%, or what you want*/
-}
-
-// Fixes images in popup boxes from Google Translate
-.gmnoprint img {
-  max-width: none;
-}
-
-// Specify the color of the selection
-::-moz-selection {
-  color: $black;
-  background: $lightGray;
-}
-::selection {
-  color: $black;
-  background: $lightGray;
-}
-
-// Nicolas Gallagher's micro clearfix hack
-// http://nicolasgallagher.com/micro-clearfix-hack/
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  display: table;
-}
-
-.clearfix:after {
-  clear: both;
-}
-
-/*********************/
-/* LAYOUT / SECTIONS */
-/*********************/
-
-//
-// .header
-//
-
-.header {
-  margin: 3em 0;
-
-  @include md-screen {
-    margin: 4em 0 6em 0;
-  }
-}
-
-.site-avatar img {
-  width: 70px;
-
-  @include md-screen {
-    width: 100%;
-  }
-}
-
-.site-name,
-.site-description {
-  margin: 0;
-
-  @include md-screen {
-    text-align: left;
-  }
-}
-
-//
-// .main
-//
-
-.posts > .post {
+.posts>.post {
   padding-bottom: 2em;
-  border-bottom: 1px solid $lightGray;
+  border-bottom : 1px solid $lightGray;
 }
 
 .post:first-child {
@@ -364,19 +52,19 @@ featured-image-wrapper img {
 }
 
 .post:last-child {
-  margin-bottom: 15vh;
+  margin-bottom : 15vh;
   padding-bottom: 1em;
-  border-bottom: none;
+  border-bottom : none;
 }
 
 .post {
   blockquote {
-    margin: 1.8em 0.8em;
+    margin     : 1.8em 0.8em;
     border-left: 2px solid $gray;
-    padding: 0.1em 1em;
-    color: $gray;
-    font-size: 22px;
-    font-style: italic;
+    padding    : 0.1em 1em;
+    color      : $gray;
+    font-size  : 22px;
+    font-style : italic;
   }
 
   .comments {
@@ -385,7 +73,7 @@ featured-image-wrapper img {
 
   .read-more {
     text-transform: uppercase;
-    font-size: 15px;
+    font-size     : 15px;
   }
 }
 
@@ -393,49 +81,144 @@ featured-image-wrapper img {
   text-align: justify;
   text-align: center;
 
-  @include md-screen {
-    text-align: justify;
-  }
+
 }
 
 .page {
   text-align: justify;
 }
 
-.d-inline {
-  display: inline !important;
-}
+.navbar {
+  background-color: transparent;
+  display: flex;
+  
+  @include until($tablet) {
+    align-items: center;
+    flex-direction: column;
+  }
+  
 
-.p-0 {
-  padding: 0px !important;
-}
-
-.m-0 {
-  margin: 0px !important;
-}
-
-.the-reader {
-  background-image: url(/images/SitReadingDoodle.svg);
-  max-width: 100%;
-  height: 30vh;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-top: 20px;
-
-  @include sm-screen {
-    background-position: center;
+  .blog-title {
+    color: white;
   }
 
-  @include md-screen {
-    height: 40vh;
-    background-position: right;
-    margin-top: 0;
+  .header-button {
+    display        : inline-block;
+    text-decoration: none;
+    position       : relative;
   }
 
-  @include lg-screen {
-    height: 40vh;
+  .header-button .border-wrapper {
+    position: relative;
+    left    : 0;
+    top     : 0;
+    width   : 100%;
+    height  : 100%;
+    padding : 0.3em 0.5em;
+    border  : 2px solid #000000;
+  }
+
+
+  .header-button .border-wrapper .label {
+    font-weight       : 600;
+    color             : #000;
+    margin            : 0;
+    text-align        : center;
+    text-transform    : uppercase;
+    -webkit-transition: all 0.15s ease-out;
+    -moz-transition   : all 0.15s ease-out;
+    -o-transition     : all 0.15s ease-out;
+    transition        : all 0.15s ease-out;
+  }
+
+
+  .header-button-border {
+    position          : absolute;
+    background-color  : #bcbcbc;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition   : all 0.25s ease-out;
+    -o-transition     : all 0.25s ease-out;
+    transition        : all 0.25s ease-out;
+  }
+
+  .header-button:hover .border-wrapper .header-button-border-left,
+  .header-button:hover .border-wrapper .header-button-border-right {
+    height: calc(100% + 2px);
+  }
+
+  .header-button:hover .border-wrapper .header-button-border-top,
+  .header-button:hover .border-wrapper .header-button-border-bottom {
+    width: calc(100% + 2px);
+  }
+
+  .header-button-border-left {
+    left  : -2px;
+    bottom: -2px;
+    width : 2px;
+    height: 0;
+  }
+
+  .header-button-border-top {
+    left  : -2px;
+    top   : -2px;
+    width : 0;
+    height: 2px;
+  }
+
+  .header-button-border-right {
+    right : -2px;
+    top   : -2px;
+    width : 2px;
+    height: 0;
+  }
+
+  .header-button-border-bottom {
+    right : -2px;
+    bottom: -2px;
+    width : 0;
+    height: 2px;
   }
 }
+
+
+/* angled div */
+.slanted-div {
+  position     : relative;
+  padding      : 5vh 0 5vh;
+  background   : #128c7e;
+  overflow     : visible;
+  z-index      : 1;
+  margin-bottom: 10vh;
+}
+
+/* where the magic happens */
+.slanted-div:after {
+  content         : '';
+  width           : 100%;
+  height          : 100%;
+  position        : absolute;
+  background      : inherit;
+  z-index         : -1;
+  bottom          : 0;
+  transform-origin: left bottom;
+  transform       : skewY(3deg);
+}
+
+/* displays the content inside, as these settings in the parent breaks the effect */
+.slanted-div div {
+  text-align: center;
+  font-size : 1.2rem;
+}
+
+/* responsive */
+@media only screen and (max-width : 720px) {
+
+  .slanted-div {
+    padding: 2.5vh 0 2.5vh;
+  }
+
+}
+
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start

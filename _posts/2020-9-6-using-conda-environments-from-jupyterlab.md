@@ -3,6 +3,7 @@ layout: post
 title: Using conda environments from JupyterLab
 tags: anaconda jupyterlab python
 featured-image: header_using_conda_environments_from_jupyterlab.png
+background-type: dark
 ---
 
 Anaconda is a great package manager for R and Python, as also as JupyterLab is a great interactive IDE. Although, when I started using these tools, I did not use all its capabilities. Past before I ended make a JupyterLab install for every env I had (horrible, shame on me!). Said that, today I will show you how to install JupyterLab once and use all other your envs without leave the lab GUI.

@@ -1,17 +1,19 @@
+<div class="mb-5 parallax dark-gradient" style="background-image: url({{ site.baseurl }}/images/{{ include.image }});">
+  <div class="section container is-max-desktop is-align-self-flex-end {% if page.background-type == 'dark' %}dark-gradient{% else %}light-gradient{% endif %}">
+  <div class="post-header">
 
-<div class="parallax" style="background-image: url({{ site.baseurl }}/images/{{ include.image }});">
-    <div class="container post-header Aligner">
-        <div class="Aligner-item">
-        <h1>{{ page.title }}</h1>
-        <p> Written on {{ page.date | date: "%B %e, %Y" }} </p>
-        {% if page.tags %}
-        <p>
-          {% for tag in page.tags %}
-          {% capture tag_name %}{{ tag }}{% endcapture %}
-          <a href="/tag/{{ tag_name }}">{{ tag_name }}</a>
-          {% endfor %}
-        </p>
-        {% endif %}
-    </div>
-    </div>
+    <h1 class="is-size-3 {% if page.background-type == 'dark' %}has-text-white{% else %}has-text-black{% endif %}">{{ page.title }}</h1>
+    <p class="{% if page.background-type == 'dark' %}has-text-white{% else %}has-text-black{% endif %}"> Written on {{ page.date | date: "%B %e, %Y" }} </p>
+
+    {% if page.tags %}
+    <p>
+      {% for tag in page.tags %}
+      {% capture tag_name %}{{ tag }}{% endcapture %}
+      <a class="post-category has-text-black has-background-light" href="/tag/{{ tag_name }}">{{ tag_name }}</a>
+      {% endfor %}
+    </p>
+    {% endif %}
+
+  </div>
+  </div>
 </div>

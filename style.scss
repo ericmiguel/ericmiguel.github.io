@@ -4,223 +4,89 @@
 // IMPORTS
 //
 
-@import "variables";
-@import "bulma";
-// Syntax highlighting @import is at the bottom of this file
+@import "_sass/utilities/_all";
+@import "_sass/base/_all";
+@import "_sass/elements/_all";
+@import "_sass/form/_all";
+@import "_sass/components/_all";
+@import "_sass/grid/_all";
+@import "_sass/helpers/_all";
+@import "_sass/layout/_all";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 
-.the-reader {
-  background-image   : url(/images/SitReadingDoodle.svg);
-  max-width          : 100%;
-  height             : 30vh;
-  background-repeat  : no-repeat;
-  background-position: center;
-  margin-top         : 20px;
+body {
+  line-height: 1.8em;
+  font-size  : 1.1em;
+  font-family: 'Montserrat', sans-serif;
+}
 
+hr{
+  margin: 0;
+}
 
-  @include until($tablet) {
-    height             : 40vh;
-    background-position: right;
-    margin-top         : 0;
+.post {
+  img {
+    margin: 1.5em 0 1.5em 0;
   }
 
+  p{
+    margin: 0 0 1.5em 0;
+    text-align: justify;
+  }
+}
+
+
+.post-category {
+
+  padding   : 0.4em 1em;
+  color     : #fff;
+  background: rgb(50, 10, 82);
+
+};
+
+.post-category:hover{
+  color: rgb(143, 129, 194);
+}
+
+
+.highlight {
+  margin-bottom: 1.5em;
+  margin-top   : 1.5em;
 
 }
 
-.header-wrapper {
-  background: #128c7e;
+.dark-gradient {
+  background: linear-gradient(90deg,
+      rgb(10, 0, 5) 10%,
+      rgba(255, 255, 255, 0) 100%);
 }
 
 .parallax {
-  /* Full height */
-  height: 40vh;
-
-  /* Create the parallax scrolling effect */
+  display: flex;
+  height : 40vh;
   background-attachment: fixed;
   background-position  : center;
   background-repeat    : no-repeat;
   background-size      : cover;
-}
 
-.posts>.post {
-  padding-bottom: 2em;
-  border-bottom : 1px solid $lightGray;
-}
+  .post-header {
 
-.post:first-child {
-  margin-top: 5vh;
-}
+    h1 {
+      font-size: 2rem;
+    }
 
-.post:last-child {
-  margin-bottom : 15vh;
-  padding-bottom: 1em;
-  border-bottom : none;
-}
+    h1,
 
-.post {
-  blockquote {
-    margin     : 1.8em 0.8em;
-    border-left: 2px solid $gray;
-    padding    : 0.1em 1em;
-    color      : $gray;
-    font-size  : 22px;
-    font-style : italic;
-  }
+    p {
+      margin-bottom: 10px;
+    }
 
-  .comments {
-    margin-top: 10px;
-  }
-
-  .read-more {
-    text-transform: uppercase;
-    font-size     : 15px;
-  }
-}
-
-.excerpt {
-  text-align: justify;
-  text-align: center;
-
-
-}
-
-.page {
-  text-align: justify;
-}
-
-.navbar {
-  background-color: transparent;
-  display: flex;
-  
-  @include until($tablet) {
-    align-items: center;
-    flex-direction: column;
-  }
-  
-
-  .blog-title {
-    color: white;
-  }
-
-  .header-button {
-    display        : inline-block;
-    text-decoration: none;
-    position       : relative;
-  }
-
-  .header-button .border-wrapper {
-    position: relative;
-    left    : 0;
-    top     : 0;
-    width   : 100%;
-    height  : 100%;
-    padding : 0.3em 0.5em;
-    border  : 2px solid #000000;
-  }
-
-
-  .header-button .border-wrapper .label {
-    font-weight       : 600;
-    color             : #000;
-    margin            : 0;
-    text-align        : center;
-    text-transform    : uppercase;
-    -webkit-transition: all 0.15s ease-out;
-    -moz-transition   : all 0.15s ease-out;
-    -o-transition     : all 0.15s ease-out;
-    transition        : all 0.15s ease-out;
-  }
-
-
-  .header-button-border {
-    position          : absolute;
-    background-color  : #bcbcbc;
-    -webkit-transition: all 0.25s ease-out;
-    -moz-transition   : all 0.25s ease-out;
-    -o-transition     : all 0.25s ease-out;
-    transition        : all 0.25s ease-out;
-  }
-
-  .header-button:hover .border-wrapper .header-button-border-left,
-  .header-button:hover .border-wrapper .header-button-border-right {
-    height: calc(100% + 2px);
-  }
-
-  .header-button:hover .border-wrapper .header-button-border-top,
-  .header-button:hover .border-wrapper .header-button-border-bottom {
-    width: calc(100% + 2px);
-  }
-
-  .header-button-border-left {
-    left  : -2px;
-    bottom: -2px;
-    width : 2px;
-    height: 0;
-  }
-
-  .header-button-border-top {
-    left  : -2px;
-    top   : -2px;
-    width : 0;
-    height: 2px;
-  }
-
-  .header-button-border-right {
-    right : -2px;
-    top   : -2px;
-    width : 2px;
-    height: 0;
-  }
-
-  .header-button-border-bottom {
-    right : -2px;
-    bottom: -2px;
-    width : 0;
-    height: 2px;
-  }
-}
-
-
-/* angled div */
-.slanted-div {
-  position     : relative;
-  padding      : 5vh 0 5vh;
-  background   : #128c7e;
-  overflow     : visible;
-  z-index      : 1;
-  margin-bottom: 10vh;
-}
-
-/* where the magic happens */
-.slanted-div:after {
-  content         : '';
-  width           : 100%;
-  height          : 100%;
-  position        : absolute;
-  background      : inherit;
-  z-index         : -1;
-  bottom          : 0;
-  transform-origin: left bottom;
-  transform       : skewY(3deg);
-}
-
-/* displays the content inside, as these settings in the parent breaks the effect */
-.slanted-div div {
-  text-align: center;
-  font-size : 1.2rem;
-}
-
-/* responsive */
-@media only screen and (max-width : 720px) {
-
-  .slanted-div {
-    padding: 2.5vh 0 2.5vh;
   }
 
 }
 
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
-// ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "highlights";
-@import "svg-icons";

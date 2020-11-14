@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
+
+  {% include meta.html %}
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/bulma.min.css" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}"
+    href="{{ site.baseurl }}/feed.xml" />
+
+</head>
+
+<body>
+
+  <body>
+    <header class="section">
+
+      <nav class="navbar container is-max-desktop" role="navigation" aria-label="main navigation">
+        <a href="{{ site.baseurl }}/" class="navbar-brand">
+          
+          <figure class="image is-64x64">
+            <img
+              src="https://avatars2.githubusercontent.com/u/12076399?s=460&u=fe5ff827104f51866595e0f9176b8da7f4ef9636&v=4"
+              alt="Eric Miguel" class="is-rounded">
+          </figure>
+
+          <div class="has-text-dark ml-3">
+            <p class="is-size-3 mb-0">{{ site.name }}</p>
+            <p>{{ site.description }}</p>
+          </div>
+
+        </a>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+
+            <a href="{{ site.baseurl }}/about" class="mr-4">
+              About
+            </a>
+
+            <a href="https://github.com/ericmiguel" target="_blank" class="mr-4">
+              Github
+            </a>
+
+            <a href="https://www.linkedin.com/in/ericmrib/" target="_blank">
+              Linkedin
+            </a>
+
+          </div>
+        </div>
+      </nav>
+
+    </header>
+
+    <div class="main">
+      {{ content }}
+    </div>
+
+    <footer class="footer">
+      <div class="container is-max-desktop">
+        <div class="level">
+          <div class="level-left">
+            <div class="level-item">Help something here helps you out.</div>
+          </div>
+          <div class="level-right">
+            <div class="level-item">Free knowledge for everyone.</div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    {% include analytics.html %}
+  </body>
+
+</html>

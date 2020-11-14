@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<!-- featured post image -->
+{% if page.featured-image %}
+{% include post-header.html image=page.featured-image alt=page.featured-image-alt %}
+{% endif %}
+
+<div class="container section is-max-desktop">
+  <article class="post">
+    {{ content }}
+    {% include disqus.html %}
+  </article>
+</div>

@@ -1,5 +1,5 @@
---- 
 ---
+--- 
 //
 // IMPORTS
 //
@@ -20,9 +20,10 @@ body {
   line-height: 1.8em;
   font-size  : 1.1em;
   font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
 }
 
-hr{
+hr {
   margin: 0;
 }
 
@@ -31,9 +32,18 @@ hr{
     margin: 1.5em 0 1.5em 0;
   }
 
-  p{
-    margin: 0 0 1.5em 0;
+  p {
+    margin    : 0 0 1.5em 0;
     text-align: justify;
+  }
+}
+
+.navbar {
+  .navbar-item {
+    @include until($desktop) {
+      margin-top  : 2em;
+      padding-left: 0;
+    }
   }
 }
 
@@ -43,13 +53,16 @@ hr{
   padding   : 0.4em 1em;
   color     : #fff;
   background: rgb(50, 10, 82);
+  margin-top: 0.25em;
+  display   : inline-block;
 
-};
-
-.post-category:hover{
-  color: rgb(143, 129, 194);
 }
 
+;
+
+.post-category:hover {
+  color: rgb(143, 129, 194);
+}
 
 .highlight {
   margin-bottom: 1.5em;
@@ -58,14 +71,15 @@ hr{
 }
 
 .dark-gradient {
+  max-height: 100%;
   background: linear-gradient(90deg,
       rgb(10, 0, 5) 10%,
       rgba(255, 255, 255, 0) 100%);
 }
 
 .parallax {
-  display: flex;
-  height : 40vh;
+  display              : flex;
+  min-height           : 40vh;
   background-attachment: fixed;
   background-position  : center;
   background-repeat    : no-repeat;

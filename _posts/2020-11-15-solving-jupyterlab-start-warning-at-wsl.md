@@ -26,4 +26,4 @@ Open the config file (usually in ~/.jupyter). Search for the following line and 
 c.NotebookApp.use_redirect_file = False
 {% endhighlight %}
 
-I am using WSL2 (Ubuntu 20.04) and now the error is gone and the browser opens as also as Jupyter starts.
+I am using WSL2 (Ubuntu 20.04) and now the error is gone and the browser opens as also as Jupyter starts without warning.

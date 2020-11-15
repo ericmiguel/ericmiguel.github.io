@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Solving the Jupyterlab start warning at WSL
-tags: anaconda jupyterlab python
+tags: jupyterlab wsl
 featured-image: header_using_conda_environments_from_jupyterlab.png
 background-type: dark
 ---

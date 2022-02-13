@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block content %}
+
+<section class="grid">
+
+    {% for article in articles_page.object_list %}
+
+    <article class="card">
+        <header>
+            <div>
+                <h2 class="post-title">
+                    <a href="{{article.url}}">{{ article.title }}</a>
+                </h2>
+
+                <div class="post-date">
+                    <time datetime="{{ article.date | strftime('%Y-%m-%d') }}">
+                        {{ article.date | strftime('%b %-d, %Y') }}
+                    </time>
+                </div>
+
+                <div class="tags">
+                    {% for tag in article.tags %}
+                    <a href="/tag/{{ tag.name }}">{{ tag.name }}</a> {% endfor %}
+                </div>
+
+            </div>
+
+
+        </header>
+
+        <p class="summary">
+            {{ article.summary }}
+        </p>
+
+
+
+    </article>
+
+    {% endfor %}
+
+</section>
+
+{% endblock %}

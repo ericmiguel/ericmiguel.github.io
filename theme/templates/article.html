@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block content %}
+
+<header class="post-header">
+
+    <div class="post-date">
+        <time datetime="{{ article.date | strftime('%Y-%m-%d') }}">
+        created: {{ article.date | strftime('%b %-d, %Y') }}
+        </time> |
+        <time datetime="{{ article.modified | strftime('%Y-%m-%d') }}">
+            updated: {{ article.modified | strftime('%b %-d, %Y') }}
+        </time>
+    </div>
+    <h2 class="post-title">{{ article.title }}</h2>
+    <div class="tags">
+        {% for tag in article.tags %}
+        <a href="/tag/{{ tag.name }}">{{ tag.name }}</a> {% endfor %}
+    </div>
+</header>
+
+<article>{{ article.content }}</article>
+
+{% endblock %}

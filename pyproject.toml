@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "ericmiguel.github.io"
+version = "0.1.0"
+description = "my personal blog"
+authors = ["ericmiguel <eric.mrib@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pelican = "^4.7.1"
+Markdown = "^3.3.6"
+ghp-import = "^2.0.2"
+html5lib = "^1.1"
+
+[tool.poetry.dev-dependencies]
+pydocstyle = "^6.1.1"
+mypy = "^0.930"
+black = "^21.12b0"
+flake9 = "^3.8.3"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

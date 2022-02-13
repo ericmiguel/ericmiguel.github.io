@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Eric M. Ribeiro</title>
+    <meta name="description" content="Coding, scientific development, finance, data analysis, visualization, statistics, and machine learning">
+    <meta name="author" content="Eric M. Ribeiro">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="/theme/css/rdark.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/main.css"> </head>
+
+<body>
+    <div class="container">
+        <header class="blog-header">
+
+ <a href="https://github.com/ericmiguel" class="social-link" target="_blank">Github</a>  <a href="#" class="social-link" target="_blank">Linkedin</a> 
+            <h1><a href="/">Eric M. Ribeiro</a></h1>
+            <small>Environmental data science</small>
+        </header>
+
+
+
+<header class="post-header">
+
+    <div class="post-date">
+        <time datetime="2020-11-14">
+        created: Nov 14, 2020
+        </time> |
+        <time datetime="2021-12-30">
+            updated: Dec 30, 2021
+        </time>
+    </div>
+    <h2 class="post-title">Run bash script from Jupyter in three simple steps</h2>
+    <div class="tags">
+        <a href="/tag/jupyter">jupyter</a>         <a href="/tag/bash">bash</a>     </div>
+</header>
+
+<article><p>During past weeks I've gone deep in automating processes. Bash scripting was the solution to go, but I`m not a frequent Bash user. However, the possibility to write bash code at Jupyter with all the "shift enter" made it a walk in the park.</p>
+<p>If you don't know, Jupyter can handle different language kernels beyond Python<sup id=sf-run-bash-script-from-jupyter-in-three-simple-steps-1-back><a href=#sf-run-bash-script-from-jupyter-in-three-simple-steps-1 class=simple-footnote title="If you're interested in jupyter kernels, what about my last article on conda envs and Jupyter?">1</a></sup>. R and Julia are some other possibilities, not forgetting about bash.</p>
+<p>First, make sure you have Anaconda. I recommend you the <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> distribution. It does not come with nothing pre-installed but the essential. To install the bash kernel on Jupyter, start creating and activating a new conda env:</p>
+<div class=codehilite><pre><span></span><code><span class=n>conda</span> <span class=n>create</span> <span class=o>-</span><span class=n>n</span> <span class=n>bashkernel</span> <span class=n>python</span><span class=o>=</span><span class=mf>3.8</span>
+<span class=n>conda</span> <span class=n>activate</span> <span class=n>bashkernel</span>
+</code></pre></div>
+
+<p>After, install the Bash Kernel:</p>
+<div class=codehilite><pre><span></span><code><span class=n>conda</span> <span class=n>install</span> <span class=o>-</span><span class=n>c</span> <span class=n>conda</span><span class=o>-</span><span class=n>forge</span> <span class=n>bash_kernel</span>
+</code></pre></div>
+
+<p>Run the following command to get it done:</p>
+<div class=codehilite><pre><span></span><code><span class=n>python</span> <span class=o>-</span><span class=n>m</span> <span class=n>bash_kernel</span><span class=o>.</span><span class=n>install</span>
+</code></pre></div>
+
+<p>If everything gone ok, you will see the Jupyter launcher with your brand new kernel option.
+<img alt=final-result src="/posts/2020/11/run-bash-script-from-jupyter-in-three-simple-steps/using-bash-from-jupyter/img1.jpg"></p>
+<p>Very simple, huh?</p><ol class=simple-footnotes><li id=sf-run-bash-script-from-jupyter-in-three-simple-steps-1>If you're interested in jupyter kernels, what about my <a href="https://ericmiguel.github.io/using-conda-environments-from-jupyterlab/">last article</a> on conda envs and Jupyter? <a href=#sf-run-bash-script-from-jupyter-in-three-simple-steps-1-back class=simple-footnote-back>↩</a></li></ol></article>
+
+
+
+    </div>
+
+</body>
+
+</html>

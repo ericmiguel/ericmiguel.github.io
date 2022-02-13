@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Eric M. Ribeiro</title>
+    <meta name="description" content="Coding, scientific development, finance, data analysis, visualization, statistics, and machine learning">
+    <meta name="author" content="Eric M. Ribeiro">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="/theme/css/rdark.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/main.css"> </head>
+
+<body>
+    <div class="container">
+        <header class="blog-header">
+
+ <a href="https://github.com/ericmiguel" class="social-link" target="_blank">Github</a>  <a href="#" class="social-link" target="_blank">Linkedin</a> 
+            <h1><a href="/">Eric M. Ribeiro</a></h1>
+            <small>Environmental data science</small>
+        </header>
+
+
+
+<header class="post-header">
+
+    <div class="post-date">
+        <time datetime="2020-09-06">
+        created: Sep 6, 2020
+        </time> |
+        <time datetime="2021-12-30">
+            updated: Dec 30, 2021
+        </time>
+    </div>
+    <h2 class="post-title">Using conda environments from JupyterLab</h2>
+    <div class="tags">
+        <a href="/tag/python">python</a>         <a href="/tag/anaconda">anaconda</a>         <a href="/tag/jupyter">jupyter</a>     </div>
+</header>
+
+<article><p>Anaconda is a great package manager for R and Python, as also as JupyterLab is a great interactive IDE. Although, when I started using these tools, I did not use all its capabilities. Said that, today I will show you how to install JupyterLab once and use all other your envs without leave the lab GUI.</p>
+<p>At the end, you will be able to choose on which env your notebooks will be running:
+<img alt="final-result" src="/posts/2020/09/using-conda-environments-from-jupyterlab/using-conda-environments-from-jupyterlab/img1.png" /></p>
+<p>First, make sure you have Anaconda. I recommend you the <a href="https://docs.conda.io/en/latest/miniconda.html">Miniconda</a> distribution. It does not come with nothing pre-installed but the essential.</p>
+<p>Open your terminal or Anaconda prompt and create a conda env to host our JupyterLab installation.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">lab</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.7</span> <span class="n">jupyterlab</span>
+</code></pre></div>
+
+<p>I created a “lab” env, but feel free to name it the way you want.</p>
+<p>After, create other conda envs matching your needs. I will create two envs: one for my machine learning studies and other for my geo processing projects. You can create whatever makes sense to your needs. Make sure to not forget the ipykernel installation.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">Geo</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.7</span> <span class="n">ipykernel</span>
+<span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">ML</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.7</span> <span class="n">ipykernel</span>
+</code></pre></div>
+
+<p>The Ipykernel is the engine responsible for the Jupyter interactive interpretation of Python. It will also allow us to use our conda environments from inside the Jupyter GUI. Let us continue and create new kernels for our envs:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">ipython</span> <span class="n">kernel</span> <span class="n">install</span> <span class="o">--</span><span class="n">user</span> <span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="n">ML</span>
+<span class="n">ipython</span> <span class="n">kernel</span> <span class="n">install</span> <span class="o">--</span><span class="n">user</span> <span class="o">--</span><span class="n">name</span><span class="o">=</span><span class="n">Geo</span>
+</code></pre></div>
+
+<p>If you accidentally made some mistake you can remove the kernel.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">jupyter</span> <span class="n">kernelspec</span> <span class="n">uninstall</span> <span class="n">unwantedkernel</span>
+</code></pre></div>
+
+<p>Is not mandatory use the same name for the kernel and the corresponding conda env but is a good idea. Matching labels help us to keep things clear and well organized. Finally, activate your JupyterLab env and start the server.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">conda</span> <span class="n">activate</span> <span class="n">lab</span>
+<span class="n">jupyter</span> <span class="n">lab</span>
+</code></pre></div>
+
+<p>Now you can change between kernels without create new instances of JupyterLab. This setup means no need on installing JupyterLab in each conda env.</p></article>
+
+
+
+    </div>
+
+</body>
+
+</html>
